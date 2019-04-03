@@ -1,0 +1,60 @@
+
+
+
+======================= HUNTERS ====================================
+* Split roles for each hunter (2 search in an area while others specifically look for trail). When one hunter  
+encounters dracula all hunters converge on the location but avoid going along the same path. They should try
+to enclose dracula by approaching in a wide formation
+
+* When dracula is at sea have hunters split up and each go to a city next to the sea (since dracula must go to
+one of these cities when exiting the sea) if it is within range for the next move or two. There is a chance
+one of them will run into dracula as soon as he reammerges from the ocean
+
+* Never have two or more hunters in the same city unless dracula is there, this waste an opportunity to catch
+dracula when he escapes to adjacent cities
+
+* When a hunter step into the trap, he need to figure out the possible location that dracula can go to from that place
+  And everyone just gather around to that area
+
+* When player have no clews what is going on with dracula, just groofing around
+
+* Use message to communicate? 
+* Yes. Set Lord Goldming as the 'Supreme Leader' of the team. He will send out the location that each player should go to at their next term
+* For Lord Goldming, he will read the infomation from the last player (Mina Hawker), if dracula has no recent move for analyse
+* he will pass on the infomation for the next player
+* Use the BFS to find the shortest distance from dracula to each player (if known)
+* Message: Read only the message from the last player
+* first letter is the number including 1, 2, 3 represent different message type
+* 1 stands for a standard message
+* 0 stands for a NONE message: stands for "okay just hang around, I have no idea wtf happened"
+* first three letter represent the destination of the target
+* follow by the location that hunters should go to at the next turn
+* Message form: N..N..N..N..N..
+* string length =
+* for instance Dr seward will have a message in form ... .. .. ..
+* while mina hawker will have a message in form ... ..
+* Usually, Once Encounter || traps || dracula are spoted
+* Lord Goldaming will spread out the infos so that others can go and trace it
+* If during the turns of other players some other traps || encounters are spoted
+* the player can switch the message so that others can go and trace 
+* destination change IF AND ONLY IF a new trap || encounters were spot last term
+
+* new strategy uploaded, need to be classify
+
+
+
+*basic strategy of hunter 
+*   read the message for instruction for the next move
+*       if(current state change) change the message & instruction
+*   make a new move
+*   pass on the message
+
+
+======================= DRACULA ====================================
+* When score is low and hp is high enough go to sea and stay there since the game 
+  will end before dracula's health depletes
+
+
+
+======================= Questions ==================================
+* If the 6th past play was a "HI"|| "DB", can dracula make a HI or DB at the current turn?
